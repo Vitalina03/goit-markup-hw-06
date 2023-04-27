@@ -165,7 +165,7 @@ img {
   position: absolute;
   content: "";
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   background: var(--dairy);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -231,6 +231,14 @@ img {
   border: none;
   margin: 0 auto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-mod:hover,
+.btn-mod:focus {
+  background-color: var(--ocean);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .form-checkbox-icon {
@@ -252,14 +260,16 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 16px;
   height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
 }
 
 .label-text {
+  display: block;
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.16;
   letter-spacing: 0.04em;
   color: var(--light-slate);
   margin-bottom: 4px;
@@ -317,7 +327,6 @@ img {
 .modalcheck:checked + .checkbox-icon {
   background-color: var(--ocean);
   border: 1px solid var(--ocean);
-  border-radius: 2px;
   fill: var(--cloud);
 }
 
@@ -326,6 +335,7 @@ img {
 .email-modal {
   width: 360px;
   height: 40px;
+  padding-left: 38px;
 }
 .modal-textarea {
   width: 360px;
