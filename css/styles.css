@@ -173,6 +173,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-top: 72px;
   padding-right: 24px;
   padding-bottom: 24px;
   padding-left: 24px;
@@ -196,8 +197,9 @@ img {
 }
 
 .modal-btn:hover,
-.modal-btn :focus {
+.modal-btn:focus {
   background-color: var(--ocean);
+  fill: var(--white);
 }
 
 .check-div {
@@ -232,13 +234,19 @@ img {
   margin: 0 auto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-mod:hover,
 .btn-mod:focus {
   background-color: var(--ocean);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  fill: var(--white);
+}
+
+.modal-icon {
+  color: var(--navy-blue);
 }
 
 .form-checkbox-icon {
@@ -292,7 +300,6 @@ img {
   letter-spacing: 0.02em;
   color: var(--navy-blue);
   margin-bottom: 16px;
-  margin-top: 72px;
   text-align: center;
 }
 
@@ -336,12 +343,24 @@ img {
   width: 360px;
   height: 40px;
   padding-left: 38px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.name-modal:focus,
+.tel-modal:focus,
+.email-modal:focus,
+.modal-textarea:focus {
+  border: 1px solid rgba(77, 90, 229, 1);
+}
+
 .modal-textarea {
   width: 360px;
   height: 120px;
   margin-bottom: 16px;
+  padding-left: 16px;
+  padding-top: 8px;
   resize: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -349,16 +368,11 @@ img {
   visibility: hidden;
   pointer-events: none;
 }
-.modal-icon {
-  color: var(--navy-blue);
-}
 
 .modal-textarea::placeholder {
   font-size: 12px;
   line-height: 1.17;
   color: rgba(46, 47, 66, 0.4);
-  padding-left: 16px;
-  padding-top: 8px;
 }
 .backdrop.is-hidden .modal {
   transform: translate(250ms cubic-bezier(0.4, 0, 0.2, 1));
